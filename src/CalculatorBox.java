@@ -90,11 +90,11 @@ public class CalculatorBox extends JFrame{
         output.setText("0");
 
 
-        row1.setLayout(new BoxLayout(row1, BoxLayout.LINE_AXIS));
-        row2.setLayout(new BoxLayout(row2, BoxLayout.LINE_AXIS));
-        row3.setLayout(new BoxLayout(row3, BoxLayout.LINE_AXIS));
-        row4.setLayout(new BoxLayout(row4, BoxLayout.LINE_AXIS));
-        row5.setLayout(new BoxLayout(row5, BoxLayout.LINE_AXIS));
+        row1.setLayout(new GridLayout(1, 1));
+        row2.setLayout(new GridLayout(1, 1));
+        row3.setLayout(new GridLayout(1, 1));
+        row4.setLayout(new GridLayout(1, 1));
+        row5.setLayout(new GridLayout(1, 1));
 
         //row1.add(Box.createHorizontalGlue());
         row1.add(btnNeg);
@@ -118,9 +118,9 @@ public class CalculatorBox extends JFrame{
         row5.add(btnEquals);
         row5.add(btnDivide);
 
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
+        mainPanel.setLayout(new GridLayout(6, 5));
         mainPanel.add(output);
-        mainPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+        //mainPanel.add(Box.createRigidArea(new Dimension(0, 5)));
         mainPanel.add(row1);
         mainPanel.add(row2);
         mainPanel.add(row3);
@@ -130,7 +130,8 @@ public class CalculatorBox extends JFrame{
         this.add(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-        this.setSize(205, 280);
+        //this.setSize(205, 280);
+        this.setMinimumSize(new Dimension(205,280));
 
     }
 
